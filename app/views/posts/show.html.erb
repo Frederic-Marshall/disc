@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @post %>
+
+<div>
+	<div style='display: flex'>
+		<%= link_to "Edit this post", edit_post_path(@post), style: 'margin: 5px' %> |
+		<%= link_to "Back to posts", posts_path, style: 'margin: 5px' %> |
+		<%= button_to "Destroy this post", @post, method: :delete, style: 'margin: 5px' %>
+	</div>
+</div>
+
+<div>
+	<%= render 'comments/form' %>
+</div>
+
+<div>
+	<h2>Answers:</h2>
+	<% @comments.each do |comment| %>
+		<p>
+			<%= comment.formated_created_at %><br />
+			<%= comment.body %><br />
+			<%= comment.user.username %>
+			<%= comment.post_id %>
+		</p>
+
+		<%= button_to 'delete', post_comment_path(@post, comment), method: :delete, turbo_confirm: 'Are you sure?' %>
+	<% end %>
+</div>

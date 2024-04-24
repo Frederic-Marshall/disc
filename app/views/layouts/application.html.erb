@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Disc</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+		<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+		<h3><%= link_to 'Posts', root_path %></h3>
+		<% if user_signed_in? %>
+			<%= link_to 'Profile', user_path(current_user) %>
+		<% else %>
+			<%= link_to 'Vxod', new_user_session_path %>
+		<% end %>
+
+    <%= yield %>
+  </body>
+</html>

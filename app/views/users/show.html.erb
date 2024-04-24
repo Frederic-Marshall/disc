@@ -1,0 +1,12 @@
+<h1>User Profile</h1>
+<p><strong>Email:</strong> <%= @user.email %></p>
+<p><strong>ID:</strong> <%= @user.id %></p>
+<p><strong>Username:</strong> <%= @user.username %></p>
+
+<%= button_to 'Vixod', destroy_user_session_path, method: :delete %>
+
+<% @user.posts.each do |post| %>
+	<hr>
+	<%= post.title %><br />
+	<%= post.desc %><br />
+<% end %>

@@ -1,0 +1,12 @@
+<%= render 'shared/errors', object: @comment %>
+
+<%= form_with model: [@post, @comment] do |f| %>
+	<div style='display: flex; text-align: center'>
+		<%= f.label :body, style: 'margin: 5px' %>
+		<%= f.text_area :body, style: 'margin: 5px' %>
+	</div>
+	
+	<div>
+		<%= f.submit 'create' %>
+	</div>
+<% end %>
