@@ -1,0 +1,7 @@
+<% @products.each do |product| %>
+	<%= product.title %><br />
+<% end %>
+
+<hr>
+
+<%= link_to 'New', new_product_path %>

@@ -15,6 +15,10 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
+<<<<<<< HEAD
+=======
+gem "image_processing", ">= 1.2"
+>>>>>>> a9546bd (artek_discuss)
 
 group :development, :test do
   gem 'debug', platforms: %i[mri windows]
