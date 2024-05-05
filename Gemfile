@@ -6,16 +6,18 @@ ruby '3.2.2'
 
 gem 'bootsnap', require: false
 gem 'devise', '~> 4.9'
+gem 'image_processing', '>= 1.2'
 gem 'importmap-rails'
 gem 'jbuilder'
+gem 'jquery-rails'
 gem 'pg', '~> 1.1'
 gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.3', '>= 7.1.3.2'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
+gem 'ancestry'
 gem 'tzinfo-data', platforms: %i[windows jruby]
-gem "image_processing", ">= 1.2"
 
 group :development, :test do
   gem 'debug', platforms: %i[mri windows]

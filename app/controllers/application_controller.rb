@@ -11,4 +11,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit :sign_in, keys: %i[login password]
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
+
+  def favorite_text
+    @favorite_exists ? 'Unfavorite' : 'Favorite'
+  end
+
+  helper_method :favorite_text
 end

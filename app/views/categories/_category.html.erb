@@ -1,0 +1,7 @@
+
+<%= @category.name %><br />
+<% if @category.parent.present? %>
+	<%= @category.parent.name %>
+<% else %>
+	No parent
+<% end %>

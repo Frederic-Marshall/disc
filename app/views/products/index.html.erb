@@ -1,7 +1,9 @@
 <% @products.each do |product| %>
-	<%= product.title %><br />
+	<br /><%= link_to product.title, product %><br />
 <% end %>
 
 <hr> <br />
 
 <%= link_to 'New', new_product_path %>
+
+<%= render 'shared/submenu' %>

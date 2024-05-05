@@ -1,0 +1,11 @@
+<div style='margin-top: 400px'>
+  <h3>Categories</h3>
+  <ul>
+    <% Category.roots.each do |category| %>
+      <li>
+        <%= link_to category.name, category %>
+        <%= render 'shared/submenu_categories', categories: category.root.descendants.arrange %>
+      </li>
+    <% end %>
+  </ul>
+</div>

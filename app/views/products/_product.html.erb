@@ -1,0 +1,14 @@
+<% if @product.images.attached? %>
+	<% @product.images.each do |image| %>
+		<%= image_tag(image, height: 100) %><br />
+	<% end %>
+<% end %>
+
+<%= @product.title %><br />
+<%= @product.brand.name %><br />
+<%= @product.category.name %>
+
+<% if current_user.present? %>
+	
+<% end %>
+

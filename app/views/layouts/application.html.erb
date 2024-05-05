@@ -13,12 +13,25 @@
   <body>
 		<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-		<h3><%= link_to 'Posts', root_path %></h3>
-		<% if user_signed_in? %>
-			<%= link_to 'Profile', user_path(current_user) %>
-		<% else %>
-			<%= link_to 'Vxod', new_user_session_path %>
-		<% end %>
+		
+		<div style='margin-bottom: 40px' >
+			<h3><%= link_to 'Posts', root_path %></h3>
+		
+			<div>
+				<% if user_signed_in? %>
+					<%= link_to 'Profile', user_path(current_user) %>
+				<% else %>
+					<%= link_to 'Vxod', new_user_session_path %>
+				<% end %>
+			</div>
+
+			<div>
+				<%= link_to 'Products', products_path %>
+				<%= link_to 'Brands', brands_path %>
+				<%= link_to 'Categories', categories_path %>
+			</div>
+		</div>
+		
 
     <%= yield %>
   </body>

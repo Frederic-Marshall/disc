@@ -1,0 +1,57 @@
+<%= render 'shared/errors', object: product %>
+
+<%= form_with(model: product) do |form| %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+	<div>
+    <%= form.label :bytitle, style: "display: block" %>
+    <%= form.text_field :bytitle %>
+  </div>
+
+	<div>
+		<%= form.label :images, "Upload Images", style: "display: block" %>
+		
+		<% if @product.images.attached? %>
+			<% product.images.each do |image| %>
+				<%= form.hidden_field :images, multiple: true, value: image.signed_id %>
+				<%= image_tag(image, height: 100, style: 'display:block') %>
+				<%= link_to 'Remove', remove_image_product_path(image), data: {confirm: 'Are you sure?', turbo_method: :delete} %>
+			<% end %>
+		<% end %>
+		
+		<%= form.file_field :images, multiple: true %>
+	</div>
+
+	<div>
+    <%= form.label :brand_id, style: "display: block" %>
+    <%= form.collection_select :brand_id, Brand.order(:name), :id, :name, { include_blank: true } %>
+  </div>
+
+	<div>
+    <%= form.label :category_id, style: "display: block" %>
+    <%= form.collection_select :category_id, Category.order(:name), :id, :name, { include_blank: true } %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.rich_text_area :description %>
+  </div>
+
+	<div>
+    <%= form.label :old_price, style: "display: block" %>
+    <%= form.text_field :old_price %>
+  </div>
+
+	<div>
+    <%= form.label :price, style: "display: block" %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

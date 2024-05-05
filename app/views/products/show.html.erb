@@ -1,0 +1,10 @@
+<div>
+	<%= link_to favorite_text, favorites_update_path(product: @product), 
+														 id: 'favorite_link', 
+														 remote: true %>
+	<br />
+	<%= render @product %>
+	<br />
+	<%= link_to 'Edit this', edit_product_path(@product) %>
+</div>
+
